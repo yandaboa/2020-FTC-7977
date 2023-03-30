@@ -32,14 +32,19 @@ public class TeleOpFinal extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
+            ////Mecanum Wheel DriveTrain Drive Forward/Backward
             leftBack.setPower(gamepad1.right_stick_y);
             leftFront.setPower(gamepad1.right_stick_y);
             rightBack.setPower(-1 * gamepad1.right_stick_y);
             rightFront.setPower(-1 * gamepad1.right_stick_y);
+            
+            //Mecanum Wheel DriveTrain Strafe
             leftBack.setPower(-1* gamepad1.right_stick_x);
             leftFront.setPower(gamepad1.right_stick_x);
             rightBack.setPower(gamepad1.right_stick_x);
             rightFront.setPower(-1* gamepad1.right_stick_x);
+
+            //Mecanum Wheel DriveTrain Turn
             leftBack.setPower(gamepad1.left_stick_y);
             leftFront.setPower(gamepad1.left_stick_y);
             rightBack.setPower(gamepad1.left_stick_y);
@@ -115,31 +120,31 @@ public class TeleOpFinal extends LinearOpMode {
     }
 
     
-    private void strafeLeft (long inputTime) {
-        leftFront.setPower(-1);
-        leftBack.setPower(1);
-        rightFront.setPower(1);
-        rightBack.setPower(-1);
-        sleep(inputTime);
+//     private void strafeLeft (long inputTime) {
+//         leftFront.setPower(-1);
+//         leftBack.setPower(1);
+//         rightFront.setPower(1);
+//         rightBack.setPower(-1);
+//         sleep(inputTime);
 
-        leftBack.setPower(0);
-        leftFront.setPower(0);
-        rightBack.setPower(0);
-        rightFront.setPower(0);
-    }
-    private void strafeRight (long inputTime) {
-        leftBack.setPower(-1);
-        leftFront.setPower(1);
-        rightBack.setPower(1);
-        rightFront.setPower(-1);
+//         leftBack.setPower(0);
+//         leftFront.setPower(0);
+//         rightBack.setPower(0);
+//         rightFront.setPower(0);
+//     }
+//     private void strafeRight (long inputTime) {
+//         leftBack.setPower(-1);
+//         leftFront.setPower(1);
+//         rightBack.setPower(1);
+//         rightFront.setPower(-1);
 
-        sleep(inputTime);
+//         sleep(inputTime);
 
-        leftBack.setPower(0);
-        leftFront.setPower(0);
-        rightBack.setPower(0);
-        rightFront.setPower(0);
-    }
+//         leftBack.setPower(0);
+//         leftFront.setPower(0);
+//         rightBack.setPower(0);
+//         rightFront.setPower(0);
+//     }
 
 
 }
